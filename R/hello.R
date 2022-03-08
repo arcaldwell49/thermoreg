@@ -13,22 +13,24 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-avp = function(dp = NULL,
-               ta = NULL,
-               rh = NULL,
-               temp = "celsius"){
+avp_calc = function(dp = NULL,
+                    ta = NULL,
+                    rh = NULL,
+                    temp = "celsius"){
 
   if(!is.null(dp)){
-    avp = 6.11 * 10^((7.5 * dp)/(237.3 + dp))
+    e_a = 6.11 * 10^((7.5 * dp)/(237.3 + dp))
   } else {
+    e_s = svp_calc(ta)
+    e_a
 
   }
-
+  return(e_a)
   # 0.750062 hPa/mbar -> mmHg
 }
 
-svp = function(ta = NULL){
-  return()
+svp_calc = function(ta = NULL){
+  return(6.11 * 10^((7.5 * ta)/(237.3 + ta)))
 }
 
 temp_convert = function(t = NULL,

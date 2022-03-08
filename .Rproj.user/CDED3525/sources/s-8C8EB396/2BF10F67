@@ -3,9 +3,9 @@
     "path": "~/Documents/GitHub/thermoreg/R/hello.R",
     "project_path": "R/hello.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "74890022",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1646757210862.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -16,11 +16,11 @@
         "scrollLine": "12"
     },
     "folds": "",
-    "lastKnownWriteTime": 1646760303,
+    "lastKnownWriteTime": 1646762940,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1646761739945,
+    "last_content_update": 1646762940286,
     "read_only": false,
     "read_only_alternatives": []
 }
