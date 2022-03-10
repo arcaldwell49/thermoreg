@@ -3,7 +3,7 @@ avp_calc = function(tdp = NULL,
                     tdb = NULL,
                     rh = NULL,
                     temp = "celsius",
-                    units = "torr"){
+                    units = thermoreg_options("press_scale")){
 
   if(class(tdp) == "thermoreg_meas"){
     tdp = tdp$est
@@ -36,15 +36,20 @@ avp_calc = function(tdp = NULL,
   if(!is.null(tdp)){
     e_a = 6.11 * 10^((7.5 * tdp)/(237.3 + tdp))
   } else {
-    e_s = svp_calc(tdb)$est
+    e_s = svp_calc(tdb,
+                   units = "mbar")$est
     e_a = rh/100*e_s
 
   }
 
+  e_a = press_convert(e_a,
+                      from = "mbar",
+                      to = units)$est
+
   structure(list(est = e_a,
                  type = "avp",
                  meas = "Pressure",
-                 units = "mbar"),
+                 units = units),
             class = "thermoreg_meas")
   # 0.750062*mbar/mbarar -> mmHg
   # 1/5171493256*mmHg -> psi

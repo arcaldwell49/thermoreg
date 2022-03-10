@@ -10,7 +10,7 @@
 #' @export
 
 temp_convert = function(x = NULL,
-                        to = "celsius",
+                        to = thermoreg_options("temp_scale"),
                         from = "fahrenheit",
                         type = "tdb"){
   if(class(x) == "thermoreg_meas"){
@@ -89,7 +89,7 @@ temp_convert = function(x = NULL,
 #' @export
 
 press_convert = function(x = NULL,
-                         to = "torr",
+                         to = thermoreg_options("press_scale"),
                          from = "mbar",
                          type = "barometric"){
 
@@ -118,52 +118,33 @@ press_convert = function(x = NULL,
   # 0.750062*mbar/mbarar -> mmHg
   # 1/51.71493256*mmHg -> psi
   # 1/760
+
+  # convert everything to torr
+  if(from == "mbar"){
+    p1 = 0.750062*x
+  }else if(from == "psi"){
+    p1 = 51.7149*x
+  } else if (from == "atm"){
+    p1 = 760*x
+  } else {
+    p1 = x
+  }
+
   if(to == "torr"){
-    if(from == "mbar"){
-      p2 = 0.750062*x
-    }else if(from == "psi"){
-      p2 = 51.7149*x
-    } else if (from == "atm"){
-      p2 = 760*x
-    } else {
-      p2 = x
-    }
+      p2 = p1
   }
 
   if(to == "atm"){
-    if(from == "mbar"){
-      p2 = 1/1013.250*x
-    }else if(from == "psi"){
-      p2 = 1/51.7149*x
-    } else if (from == "torr"){
-      p2 = 1/760*x
-    }else {
-      p2 = x
-    }
+      p2 = p1/760
   }
 
   if(to == "mbar"){
-    if(from == "atm"){
-      p2 = 1013.250*x
-    }else if(from == "psi"){
-      p2 = 68.9476*x
-    } else if (from == "torr"){
-      p2 = 1/0.750062*x
-    } else {
-      p2 = x
-    }
+    p2 = 1/0.750062*p1
   }
 
   if(to == "psi"){
-    if(from == "atm"){
-      p2 = 14.6960*x
-    }else if(from == "mbar"){
-      p2 = 0.0145038*x
-    } else if (from == "torr"){
-      p2 = 1/51.7149*x
-    } else {
-      p2 = x
-    }
+  p2 = 1/51.7149*p1
+
   }
 
   structure(list(est = p2,

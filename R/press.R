@@ -12,7 +12,7 @@
 
 press_init = function(est = NULL,
                      type = "barometric",
-                     units = "torr"){
+                     units = thermoreg_options("press_scale")){
   type = tolower(type)
   units = tolower(units)
   est = as.numeric(est)

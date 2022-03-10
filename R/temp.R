@@ -12,7 +12,7 @@
 
 temp_init = function(est = NULL,
                      type = "tdb",
-                     units = "celsius"){
+                     units = thermoreg_options("temp_scale")){
   type = tolower(type)
   units = tolower(units)
   est = as.numeric(est)
