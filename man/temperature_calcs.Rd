@@ -4,7 +4,7 @@
 \alias{temp_init}
 \title{Temperature Calculations}
 \usage{
-temp_init(est = NULL, type = "tdb", units = "celsius")
+temp_init(est = NULL, type = "tdb", units = thermoreg_options("temp_scale"))
 }
 \arguments{
 \item{est}{a numeric value representing the measurement of interest.}

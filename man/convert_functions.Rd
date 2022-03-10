@@ -5,9 +5,19 @@
 \alias{press_convert}
 \title{Unit Conversion Functions}
 \usage{
-temp_convert(x = NULL, to = "celsius", from = "fahrenheit", type = "tdb")
+temp_convert(
+  x = NULL,
+  to = thermoreg_options("temp_scale"),
+  from = "fahrenheit",
+  type = "tdb"
+)
 
-press_convert(x = NULL, to = "torr", from = "mb", type = "air")
+press_convert(
+  x = NULL,
+  to = thermoreg_options("press_scale"),
+  from = "mbar",
+  type = "barometric"
+)
 }
 \arguments{
 \item{x}{a numeric value representing the measurement of interest}

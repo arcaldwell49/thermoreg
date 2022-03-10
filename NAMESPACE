@@ -2,5 +2,7 @@
 
 S3method(print,thermoreg_meas)
 export(press_convert)
+export(press_init)
 export(temp_convert)
 export(temp_init)
+export(thermoreg_options)

@@ -1,13 +1,18 @@
-thermoreg R package
-================
+---
+title: "thermoreg R package"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 <!-- badges: start -->
-
 [![documentation](https://img.shields.io/badge/website-active-blue)](https://aaroncaldwell.us/thermoreg/)
 <!-- badges: end -->
 
-Easy functions for thermoregulatory research
-
+ Easy functions for thermoregulatory research
+ 
 # Contributing
 
 We are happy to receive bug reports, suggestions, questions, and (most
@@ -21,10 +26,7 @@ order of commitment):
 -   Raise issues about bugs or wanted features
 -   Review code
 -   Add new functionality
-
+ 
 ## Code of Conduct
-
-Please note that the thermoreg project is released with a [Contributor
-Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+  
+Please note that the thermoreg project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
