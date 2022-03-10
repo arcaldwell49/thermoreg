@@ -44,9 +44,9 @@ avp_calc = function(tdp = NULL,
   structure(list(est = e_a,
                  type = "avp",
                  meas = "Pressure",
-                 units = "mb"),
+                 units = "mbar"),
             class = "thermoreg_meas")
-  # 0.750062*mb/mbar -> mmHg
+  # 0.750062*mbar/mbarar -> mmHg
   # 1/5171493256*mmHg -> psi
   # 1/760
 }
@@ -70,7 +70,7 @@ svp_calc = function(tdb = NULL,
 
   e_s = press_convert(e_s,
                       to = units,
-                      from = "mb")$est
+                      from = "mbar")$est
 
   structure(list(est = e_s,
                  type = "svp",

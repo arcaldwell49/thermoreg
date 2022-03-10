@@ -90,33 +90,36 @@ temp_convert = function(x = NULL,
 
 press_convert = function(x = NULL,
                          to = "torr",
-                         from = "mb",
-                         type = "air"){
+                         from = "mbar",
+                         type = "barometric"){
+
+  to = tolower(to)
+  from = tolower(from)
 
   if(class(x) == "thermoreg_meas"){
     x = x$est
   }
 
-  if(!(to %in% c("torr","mmHg","psi","mb","atm"))){
+  if(!(to %in% c("torr","mmhg","psi","mbar","atm"))){
     stop("to: Not a supported measure of pressure")
   }
 
-  if(!(from %in% c("torr","mmHg","psi","mb","atm"))){
+  if(!(from %in% c("torr","mmhg","psi","mbar","atm"))){
     stop("from: Not a supported measure of pressure")
   }
 
-  if(to == "mmHg"){
+  if(to == "mmhg"){
     to == "torr"
   }
 
-  if(from == "mmHg"){
+  if(from == "mmhg"){
     from == "torr"
   }
-  # 0.750062*mb/mbar -> mmHg
+  # 0.750062*mbar/mbarar -> mmHg
   # 1/51.71493256*mmHg -> psi
   # 1/760
   if(to == "torr"){
-    if(from == "mb"){
+    if(from == "mbar"){
       p2 = 0.750062*x
     }else if(from == "psi"){
       p2 = 51.7149*x
@@ -128,7 +131,7 @@ press_convert = function(x = NULL,
   }
 
   if(to == "atm"){
-    if(from == "mb"){
+    if(from == "mbar"){
       p2 = 1/1013.250*x
     }else if(from == "psi"){
       p2 = 1/51.7149*x
@@ -139,7 +142,7 @@ press_convert = function(x = NULL,
     }
   }
 
-  if(to == "mb"){
+  if(to == "mbar"){
     if(from == "atm"){
       p2 = 1013.250*x
     }else if(from == "psi"){
@@ -154,7 +157,7 @@ press_convert = function(x = NULL,
   if(to == "psi"){
     if(from == "atm"){
       p2 = 14.6960*x
-    }else if(from == "mb"){
+    }else if(from == "mbar"){
       p2 = 0.0145038*x
     } else if (from == "torr"){
       p2 = 1/51.7149*x
