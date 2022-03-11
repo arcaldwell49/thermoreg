@@ -11,33 +11,23 @@
 #'
 
 press_init = function(est = NULL,
-                     type = "barometric",
-                     units = thermoreg_options("press_scale")){
+                      type = "barometric",
+                      units = thermoreg_options("press_scale")){
   type = tolower(type)
   units = tolower(units)
   est = as.numeric(est)
 
-  if(units == "c"){
-    units = "celsius"
-  }
-  if(units == "f"){
-    units = "fahrenheit"
-  }
-  if(units == "k"){
-    units = "kelvin"
+  if(!(units %in% c("mbar","torr","psi","atm"))){
+    stop("units not supported. Must be mbar, torr, psi, or atm")
   }
 
-  if(!(units %in% c("celsius","fahrenheit","kelvin"))){
-    stop("units not supported. Must be celsius, fahrenheit, and kelvin")
-  }
-
-  if(!(type %in% c("tdb","tdp","wbgt","tg","twb"))){
-    stop("type not supported. Must be tdb, tdp, wbgt, tg, & twb")
+  if(!(type %in% c("barometric", "avp", "svp"))){
+    stop("type not supported. Must be barometric, avp, or svp")
   }
 
   structure(list(est = est,
                  type = type,
-                 meas = "Temperature",
+                 meas = "Pressure",
                  units = units),
             class = "thermoreg_meas")
 

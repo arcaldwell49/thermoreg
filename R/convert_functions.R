@@ -15,6 +15,8 @@ temp_convert = function(x = NULL,
                         from = "fahrenheit",
                         type = "tdb"){
   if(class(x) == "thermoreg_meas"){
+    from = tolower(x$units)
+    type = tolower(x$type)
     x = x$est
   }
   x = as.numeric(x)
@@ -99,7 +101,10 @@ press_convert = function(x = NULL,
   from = tolower(from)
 
   if(class(x) == "thermoreg_meas"){
+    from = tolower(x$units)
+    type = tolower(x$type)
     x = x$est
+
   }
 
   if(!(to %in% c("torr","mmhg","psi","mbar","atm"))){
