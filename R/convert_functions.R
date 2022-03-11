@@ -116,11 +116,11 @@ press_convert = function(x = NULL,
   }
 
   if(to == "mmhg"){
-    to == "torr"
+    to = "torr"
   }
 
   if(from == "mmhg"){
-    from == "torr"
+    from = "torr"
   }
   # 0.750062*mbar/mbarar -> mmHg
   # 1/51.71493256*mmHg -> psi

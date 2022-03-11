@@ -76,4 +76,26 @@ test_that("convert press works #1", {
 
 })
 
+test_that("convert press works #2", {
+  expect_error(press_convert(12,
+                             to = "adsadf"))
+  expect_error(press_convert(12,
+                             from = "adsadf"))
 
+  test1 = press_convert(12,
+                        to = "mmhg")
+  test2 = press_convert(12)
+
+  expect_equal(test1,test2)
+
+  test1 = press_convert(12,
+                        to = "torr",
+                        from = "mmhg")
+  test2 = press_convert(12,
+                        from = "torr")
+
+  expect_equal(test1,test2)
+
+  expect_equal(test1$est, 12)
+  expect_equal(test1$units, "torr")
+})
