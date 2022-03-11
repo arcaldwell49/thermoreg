@@ -32,7 +32,7 @@ test_that("press init works", {
   expect_equal(p4$meas, "Pressure")
   expect_equal(p4$units, "atm")
   expect_equal(p4$type, "svp")
-}
+})
 
 test_that("convert press works #1", {
   p1 = press_init(20)
@@ -76,4 +76,4 @@ test_that("convert press works #1", {
 
 })
 
-  )
+
