@@ -106,6 +106,20 @@ test_that("convert temps works #2", {
                temp_convert(t2, to = "f",
                             from = "k")$est)
 
+  expect_equal(t2$est,
+               temp_convert(t2, to = "k",
+                            from = "k")$est)
+
+  expect_equal(temp_init(12, units = "c")$est,
+               temp_convert(temp_init(12, units = "c"),
+                            to = "c",
+                            from = "c")$est)
+
+  expect_equal(temp_init(77, units = "f")$est,
+               temp_convert(temp_init(77, units = "f"),
+                            to = "f",
+                            from = "f")$est)
+
   expect_error(temp_convert(23,
                             to = "dsfdf"))
 
