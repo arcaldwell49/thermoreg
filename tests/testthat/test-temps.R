@@ -103,7 +103,13 @@ test_that("convert temps works #2", {
                     from = "c")
 
   expect_equal(30,
-               temp_convert(t2$est, to = "f",
+               temp_convert(t2, to = "f",
                             from = "k")$est)
+
+  expect_error(temp_convert(23,
+                            to = "dsfdf"))
+
+  expect_error(temp_convert(23,
+                            from = "dsfdf"))
 }
 )
