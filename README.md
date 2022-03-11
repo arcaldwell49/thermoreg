@@ -7,7 +7,8 @@ thermoreg R package
 [![Codecov test
 coverage](https://codecov.io/gh/arcaldwell49/thermoreg/branch/main/graph/badge.svg)](https://app.codecov.io/gh/arcaldwell49/thermoreg?branch=main)
 [![R-CMD-check](https://github.com/arcaldwell49/thermoreg/workflows/R-CMD-check/badge.svg)](https://github.com/arcaldwell49/thermoreg/actions)
-<!-- badges: end -->
+<!-- badges: end --> **Warning: This package is in VERY early
+development. DO NOT USE FOR ANY PURPOSE AT THIS TIME**
 
 Welcome to the `thermoreg` R package. This package is currently in very
 early development. The goal with the creation of this package is to make
