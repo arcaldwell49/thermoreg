@@ -28,11 +28,11 @@ temp_init = function(est = NULL,
   }
 
   if(!(units %in% c("celsius","fahrenheit","kelvin"))){
-    stop("units not supported. Must be celsius, fahrenheit, and kelvin")
+    stop("units not supported. Must be celsius, fahrenheit, and kelvin.")
   }
 
   if(!(type %in% c("tdb","tdp","wbgt","tg","twb"))){
-    stop("type not supported. Must be tdb, tdp, wbgt, tg, & twb")
+    stop("type not supported. Must be tdb, tdp, wbgt, tg, & twb.")
   }
 
   structure(list(est = est,

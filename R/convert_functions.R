@@ -16,6 +16,7 @@ temp_convert = function(x = NULL,
   if(class(x) == "thermoreg_meas"){
     x = x$est
   }
+  x = as.numeric(x)
   to = tolower(to)
   from = tolower(from)
   if(!(to %in% c("kelvin", "celsius", "fahrenheit", "c", "f","k"))){
@@ -33,7 +34,7 @@ temp_convert = function(x = NULL,
     } else if ( to == "f"){
       to = "fahrenheit"
     } else if ( to == "k"){
-      to == "kelvin"
+      to = "kelvin"
     }
   }
 
@@ -43,7 +44,7 @@ temp_convert = function(x = NULL,
     } else if ( from == "f"){
       from = "fahrenheit"
     } else if ( from == "k"){
-      from == "kelvin"
+      from = "kelvin"
     }
   }
 
@@ -51,7 +52,7 @@ temp_convert = function(x = NULL,
     if(from == "fahrenheit"){
       t2 = 5/9*(t-32)
     } else if(from == "kelvin"){
-      t2 = t2 - 273
+      t2 = t - 273
     } else{
       t2 = t
     }
@@ -72,7 +73,7 @@ temp_convert = function(x = NULL,
     if(from == "fahrenheit"){
       t2 = 5/9*(t-32)+273
     } else if(from == "celsius"){
-      t2 = t2 + 273
+      t2 = t + 273
     } else{
       t2 = t
     }

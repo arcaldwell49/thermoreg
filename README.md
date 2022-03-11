@@ -4,9 +4,15 @@ thermoreg R package
 <!-- badges: start -->
 
 [![documentation](https://img.shields.io/badge/website-active-blue)](https://aaroncaldwell.us/thermoreg/)
+[![Codecov test
+coverage](https://codecov.io/gh/arcaldwell49/thermoreg/branch/main/graph/badge.svg)](https://app.codecov.io/gh/arcaldwell49/thermoreg?branch=main)
+[![R-CMD-check](https://github.com/arcaldwell49/thermoreg/workflows/R-CMD-check/badge.svg)](https://github.com/arcaldwell49/thermoreg/actions)
 <!-- badges: end -->
 
-Easy functions for thermoregulatory research
+Welcome to the `thermoreg` R package. This package is currently in very
+early development. The goal with the creation of this package is to make
+a resource that complies many mathematical models, functions, and
+calculations that are relevant to environmental physiology.
 
 # Contributing
 
