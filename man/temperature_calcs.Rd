@@ -3,11 +3,14 @@
 \name{temp_init}
 \alias{temp_init}
 \alias{tdp_calc}
+\alias{wbgt_calc}
 \title{Temperature Calculations}
 \usage{
 temp_init(est = NULL, type = "tdb", units = thermoreg_options("temp_scale"))
 
 tdp_calc(tdb = NULL, rh = NULL, units = thermoreg_options("temp_scale"))
+
+wbgt_calc(tdb, twb, tg, units = thermoreg_options("temp_scale"))
 }
 \arguments{
 \item{est}{a numeric value representing the measurement of interest.}
@@ -15,6 +18,14 @@ tdp_calc(tdb = NULL, rh = NULL, units = thermoreg_options("temp_scale"))
 \item{type}{the type of temperature calculation.}
 
 \item{units}{the units of measurement. Options include Celsius, Fahrenheit, or Kelvin. Default is celsius.}
+
+\item{tdb}{Dry bulb temperature}
+
+\item{rh}{Relative humidity in percentage units (e.g., 40 not .4)}
+
+\item{twb}{Wet bulb temperature}
+
+\item{tg}{Black globe temperature}
 }
 \description{
 Functions for calculating different forms of temperature.
@@ -24,5 +35,7 @@ Functions for calculating different forms of temperature.
 \item \code{temp_init}: Temperature measurement
 
 \item \code{tdp_calc}: Dew point calculation
+
+\item \code{wbgt_calc}: WBGT calculation
 }}
 

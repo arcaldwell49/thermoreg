@@ -37,9 +37,9 @@ svp_calc(
 
 \item{tdb}{Dry bulb temperature}
 
-\item{rh}{Relative humiditiy in percentage units (e.g., 40 not .4)}
+\item{rh}{Relative humidity in percentage units (e.g., 40 not .4)}
 
-\item{temp}{the unit of measure for temperatuer. Default is celsius.}
+\item{temp}{the unit of measure for temperature. Default is celsius.}
 }
 \description{
 Functions for calculating different forms of pressure

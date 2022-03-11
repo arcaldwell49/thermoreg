@@ -5,10 +5,10 @@
 #' @param est a numeric value representing the measurement of interest.
 #' @param type the type of pressure calculation.
 #' @param units the units of measurement. Options include torr, atm, mbar (millibar), and psi. Default is torr.
-#' @param temp the unit of measure for temperatuer. Default is celsius.
+#' @param temp the unit of measure for temperature. Default is celsius.
 #' @param tdp Dew point temperature
 #' @param tdb Dry bulb temperature
-#' @param rh Relative humiditiy in percentage units (e.g., 40 not .4)
+#' @param rh Relative humidity in percentage units (e.g., 40 not .4)
 #'
 #' @describeIn pressure_calcs Pressure measurement
 #' @export
