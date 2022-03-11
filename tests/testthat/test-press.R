@@ -98,4 +98,14 @@ test_that("convert press works #2", {
 
   expect_equal(test1$est, 12)
   expect_equal(test1$units, "torr")
+
+  test1 = press_convert(1,
+                        to = "psi",
+                        from = "atm")
+  test2 = press_convert(test1,
+                        to = "atm")
+
+  expect_equal(test1$est, 14.6959,
+               tolerance = .0001)
+  expect_equal(test2$est, 1)
 })
