@@ -5,6 +5,7 @@
 #' @param x a numeric value representing the measurement of interest
 #' @param to the scale to convert to
 #' @param from the scale to convert from
+#' @param type scale of measurement (i.e., tdb)
 #'
 #' @describeIn convert_functions Conversion for Temperature
 #' @export

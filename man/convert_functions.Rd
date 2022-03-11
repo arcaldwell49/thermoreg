@@ -25,6 +25,8 @@ press_convert(
 \item{to}{the scale to convert to}
 
 \item{from}{the scale to convert from}
+
+\item{type}{scale of measurement (i.e., tdb)}
 }
 \description{
 Functions for providing conversions between scales of measurement.
